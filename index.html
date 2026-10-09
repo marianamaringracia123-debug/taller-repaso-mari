@@ -3,58 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio</title>
+    <title>Mi Portafolio Profesional</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- 1. Header con logo y nav con 3 enlaces -->
+    <!-- Header con Navegación y Botón de Modo Oscuro -->
     <header>
-        <div class="logo">Mi Portafolio</div>
+        <div class="logo">Mi<span>Portafolio</span></div>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#contacto">Contacto</a>
         </nav>
+        <!-- Inyección del Botón de Tema -->
+        <div class="controles-usuario">
+            <button id="btn-toggle-tema" class="btn-tema">Modo Oscuro</button>
+        </div>
     </header>
 
-    <!-- 2. Main que envuelve el contenido principal -->
-    <main>
-
-        <!-- 3. Sección Hero con id="inicio" -->
-        <section id="inicio">
+    <!-- Sección Inicio / Hero -->
+    <section id="inicio">
+        <div class="hero-content">
+            <span class="badge-hero">Diseño y Desarrollo Web Profesional</span>
+            <!-- Inyección del Título y Contenedor de Saludo Dinámico -->
             <h1>Bienvenido a mi Portafolio</h1>
-            <p>Desarrollador Web Frontend en formación</p>
-            <a href="#proyectos" class="btn">Ver Proyectos</a>
-        </section>
-
-        <!-- 4. Sección id="proyectos" con contenedor Grid y 3 tarjetas (article) -->
-        <section id="proyectos">
-            <h2>Mis Proyectos</h2>
-            <div class="grid-proyectos">
-                
-                <article>
-                    <img src="servicio-1.jpg" alt="Proyecto 1">
-                    <h3>Proyecto 1</h3>
-                    <p>Descripción breve del primer proyecto realizado.</p>
-                </article>
-
-                <article>
-                    <img src="img/proyecto2.jpg" alt="Proyecto 2">
-                    <h3>Proyecto 2</h3>
-                    <p>Descripción breve del segundo proyecto realizado.</p>
-                </article>
-
-                <article>
-                    <img src="img/proyecto3.jpg" alt="Proyecto 3">
-                    <h3>Proyecto 3</h3>
-                    <p>Descripción breve del tercer proyecto realizado.</p>
-                </article>
-
+            <!-- Contenedor vacío donde JS inyectará el saludo según la hora -->
+            <p id="saludo-tiempo-real" class="texto-resaltado"></p>
+            <div class="hero-buttons">
+                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#contacto" class="btn btn-secondary">Contáctame</a>
             </div>
-        </section>
+        </div>
+    </section>
 
-    </main>
+    <!-- Sección Proyectos -->
+    <section id="proyectos">
+        <div class="section-title">
+            <h2>Mis Proyectos</h2>
+            <p>Algunos de los trabajos más recientes que he desarrollado.</p>
+        </div>
+        <div class="grid-proyectos">
+            <!-- Proyecto 1 -->
+            <article>
+                <div class="card-img">
+                    <img src="img/hero-bn.jpg" alt="Proyecto 1">
+                </div>
+                <div class="card-body">
+                    <span class="tech-tag">HTML / CSS / JS</span>
+                    <h3>Proyecto Uno</h3>
+                    <p>Descripción breve del proyecto y las tecnologías utilizadas para su desarrollo web.</p>
+                </div>
+            </article>
 
+            <!-- Proyecto 2 -->
+            <article>
+                <div class="card-img">
+                    <img src="img/hero-bn.jpg" alt="Proyecto 2">
+                </div>
+                <div class="card-body">
+                    <span class="tech-tag">HTML / CSS</span>
+                    <h3>Proyecto Dos</h3>
+                    <p>Descripción breve del segundo proyecto implementando un diseño moderno y responsivo.</p>
+                </div>
+            </article>
+
+            <!-- Proyecto 3 -->
+            <article>
+                <div class="card-img">
+                    <img src="img/hero-bn.jpg" alt="Proyecto 3">
+                </div>
+                <div class="card-body">
+                    <span class="tech-tag">JavaScript</span>
+                    <h3>Proyecto Tres</h3>
+                    <p>Aplicación interactiva desarrollada con lógica avanzada y manipulación del DOM.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Sección Contacto -->
+    <section id="contacto">
+        <div class="section-title">
+            <h2>Contacto</h2>
+            <p>¿Tienes algún proyecto en mente? Hablemos.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 - Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Conexión del Script al final antes del cierre del body -->
+    <script src="js/app.js" defer></script>
 </body>
 </html>
