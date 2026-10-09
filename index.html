@@ -3,61 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio / Sitio Web</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <!-- Header con Logo y Navegación -->
+    <!-- 1. Header con logo y nav con 3 enlaces -->
     <header>
-        <div class="logo">
-            <img src="logo.png" alt="Logo de la empresa/proyecto">
-        </div>
+        <div class="logo">Mi Portafolio</div>
         <nav>
-            <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#contacto">Contacto</a></li>
-            </ul>
+            <a href="#inicio">Inicio</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
-    <!-- Contenido Principal -->
+    <!-- 2. Main que envuelve el contenido principal -->
     <main>
-        <!-- Sección Hero / Inicio -->
+
+        <!-- 3. Sección Hero con id="inicio" -->
         <section id="inicio">
-            <h1>Bienvenido a mi sitio web</h1>
-            <p>Descubre nuestros proyectos y servicios destacados.</p>
+            <h1>Bienvenido a mi Portafolio</h1>
+            <p>Desarrollador Web Frontend en formación</p>
+            <a href="#proyectos" class="btn">Ver Proyectos</a>
         </section>
 
-        <!-- Sección Proyectos con Grid -->
+        <!-- 4. Sección id="proyectos" con contenedor Grid y 3 tarjetas (article) -->
         <section id="proyectos">
             <h2>Mis Proyectos</h2>
-            <div class="grid-container">
+            <div class="grid-proyectos">
+                
                 <article>
-                    <img src="https://via.placeholder.com/300x200" alt="Proyecto 1">
+                    <img src="servicio-1.jpg" alt="Proyecto 1">
                     <h3>Proyecto 1</h3>
-                    <p>Descripción cualitativa breve del primer proyecto realizado.</p>
+                    <p>Descripción breve del primer proyecto realizado.</p>
                 </article>
 
                 <article>
-                    <img src="https://via.placeholder.com/300x200" alt="Proyecto 2">
+                    <img src="img/proyecto2.jpg" alt="Proyecto 2">
                     <h3>Proyecto 2</h3>
-                    <p>Descripción cualitativa breve del segundo proyecto realizado.</p>
+                    <p>Descripción breve del segundo proyecto realizado.</p>
                 </article>
 
                 <article>
-                    <img src="https://via.placeholder.com/300x200" alt="Proyecto 3">
+                    <img src="img/proyecto3.jpg" alt="Proyecto 3">
                     <h3>Proyecto 3</h3>
-                    <p>Descripción cualitativa breve del tercer proyecto realizado.</p>
+                    <p>Descripción breve del tercer proyecto realizado.</p>
                 </article>
+
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>&copy; 2026 - Todos los derechos reservados</p>
-    </footer>
+    </main>
 
 </body>
 </html>
