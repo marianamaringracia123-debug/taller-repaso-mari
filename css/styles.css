@@ -28,7 +28,7 @@ body {
     background-color: var(--color-fondo);
     color: var(--color-texto-oscuro);
     line-height: 1.6;
-    transition: background-color 0.5s ease, color 0.5s ease;
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 /* 2. Flexbox en Header */
@@ -56,6 +56,11 @@ header .logo span {
     color: var(--color-secundario);
 }
 
+header nav {
+    display: flex;
+    align-items: center;
+}
+
 header nav a {
     color: #cbd5e1;
     text-decoration: none;
@@ -67,6 +72,28 @@ header nav a {
 
 header nav a:hover {
     color: var(--color-texto);
+}
+
+/* Estilo Profesional para el Botón de Modo Oscuro */
+.controles-usuario {
+    margin-left: 2rem;
+}
+
+.btn-tema {
+    background-color: var(--color-secundario);
+    color: #ffffff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-tema:hover {
+    background-color: var(--color-secundario-hover);
+    transform: translateY(-2px);
 }
 
 /* 3. Hero Image (Portada) con Flexbox */
@@ -105,6 +132,7 @@ header nav a:hover {
     line-height: 1.2;
     margin-bottom: 1rem;
     letter-spacing: -1px;
+    color: var(--color-texto);
 }
 
 #inicio p {
@@ -122,7 +150,7 @@ header nav a:hover {
     justify-content: center;
 }
 
-/* Botones */
+/* Botones generales */
 .btn {
     display: inline-block;
     padding: 0.8rem 1.8rem;
@@ -192,7 +220,7 @@ header nav a:hover {
     overflow: hidden;
     box-shadow: var(--sombra-tarjeta);
     border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, color 0.4s ease;
     display: flex;
     flex-direction: column;
 }
@@ -251,6 +279,7 @@ header nav a:hover {
     padding: 5rem 5%;
     background-color: #ffffff;
     border-top: 1px solid #e2e8f0;
+    transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
 #contacto .btn {
@@ -266,16 +295,44 @@ footer {
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* Estilos de Modo Oscuro */
+/* =======================================================
+   MODO OSCURO - CORRECCIÓN DE COLORES Y CONTRASTE
+   ======================================================= */
 body.tema-oscuro {
-    background-color: #1a1a1a;
-    color: #f0f0f0;
+    background-color: #0f172a;
+    color: #e2e8f0;
 }
 
-/* Modifica también las tarjetas para que resalten en el fondo negro */
+/* Adaptar títulos generales en modo oscuro */
+body.tema-oscuro h2, 
+body.tema-oscuro h3 {
+    color: #f8fafc;
+}
+
+/* Adaptar párrafos de las secciones en modo oscuro */
+body.tema-oscuro p,
+body.tema-oscuro .section-title p {
+    color: #94a3b8;
+}
+
+/* Fondo de la sección de contacto en modo oscuro */
+body.tema-oscuro #contacto {
+    background-color: #1e293b;
+    border-top: 1px solid #334155;
+}
+
+/* Tarjetas y artículos de proyectos en modo oscuro con excelente contraste */
 body.tema-oscuro .card,
 body.tema-oscuro .grid-proyectos article {
-    background-color: #2c2c2c;
-    color: white;
-    border: 1px solid #444;
+    background-color: #1e293b;
+    color: #e2e8f0;
+    border: 1px solid #334155;
+}
+
+body.tema-oscuro .grid-proyectos article h3 {
+    color: #ffffff;
+}
+
+body.tema-oscuro .grid-proyectos article p {
+    color: #cbd5e1;
 }

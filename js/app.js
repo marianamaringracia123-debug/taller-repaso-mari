@@ -1,37 +1,33 @@
-// ====
+// =======================================================
 // RETO 1: MODO OSCURO INTERACTIVO
-// ====
+// =======================================================
 
 // 1. SELECCIÓN DE ELEMENTOS DEL DOM
-// [Comentario obligatorio: Explica aquí con tus palabras qué hace getElementById y por qué le pasamos 'btn-toggle-tema']
-// Usamos getElementById para buscar y seleccionar un elemento específico del HTML utilizando su atributo ID único. Le pasamos 'btn-toggle-tema' porque ese es el identificador exacto que le asignamos al botón en el HTML para poder controlarlo desde JavaScript[cite: 1, 2].
+// Este comando busca y recupera del documento HTML el elemento único que posee el identificador 'btn-toggle-tema' para vincularlo a una constante y controlarlo desde la lógica interactiva.
 const btnTema = document.getElementById('btn-toggle-tema');
 
-// [Comentario obligatorio: Explica por qué seleccionamos el body directamente con document.body]
-// Seleccionamos document.body directamente porque es la etiqueta principal que contiene toda la estructura visible de la página, lo que nos permite cambiar el color de fondo y del texto globalmente al activar el modo oscuro.
+// Almacenamos directamente el elemento body de la página para gestionar de forma general los cambios de estilo visual en toda la estructura cuando se active el modo oscuro.
 const body = document.body;
 
 // 2. MANEJO DE EVENTOS
-// [Comentario obligatorio: Explica qué es el evento 'click' y qué papel juega la función anónima que le pasamos]
-// El evento 'click' detecta cuando el usuario presiona el botón con el ratón o la pantalla táctil. La función anónima actúa como un contenedor de instrucciones que se ejecutará únicamente en el preciso instante en que ocurra dicho clic[cite: 2].
+// El método addEventListener se encarga de escuchar cuando el usuario presiona el botón. La función anónima funciona como un bloque contenedor de acciones que se ejecutará únicamente en el momento exacto en que ocurra el evento 'click'.
 btnTema.addEventListener('click', function() {
     
-    // [Comentario obligatorio: Explica qué hace exactamente el método classList.toggle('tema-oscuro')]
-    // El método classList.toggle('tema-oscuro') revisa si la clase CSS 'tema-oscuro' está presente en el body; si no la tiene, la agrega, y si ya la tiene, la elimina, funcionando como un interruptor[cite: 2, 3].
+    // Este método verifica si la clase 'tema-oscuro' está presente en el body; si no la tiene la incorpora, y si ya la posee la retira, funcionando como un conmutador o interruptor.
     body.classList.toggle('tema-oscuro');
 
     // Cambiar el texto del botón dependiendo del estado
     if (body.classList.contains('tema-oscuro')) {
-        btnTema.textContent = "Modo Claro";
+        btnTema.textContent = "☀️Modo Claro";
     } else {
-        btnTema.textContent = "Modo Oscuro";
+        btnTema.textContent = "🌙 Modo Oscuro";
     }
 });
 
 
-// ====
+// =======================================================
 // RETO 2: SALUDO DINÁMICO
-// ====
+// =======================================================
 
 // 1. SELECCIÓN DEL CONTENEDOR
 const textoSaludo = document.getElementById('saludo-tiempo-real');
@@ -50,6 +46,10 @@ if (horaActual >= 6 && horaActual < 12) {
 }
 
 // 3. INYECCIÓN EN EL DOM
-// [Comentario obligatorio: Explica la diferencia entre textContent e innerHTML y por qué usamos textContent aquí]
-// textContent inserta únicamente texto plano de forma segura, mientras que innerHTML procesa etiquetas HTML. Usamos textContent aquí porque solo necesitamos inyectar un mensaje de texto limpio, evitando riesgos de seguridad como ataques de inyección de código[cite: 2].
+// textContent se emplea para insertar texto plano de manera completamente segura dentro de un elemento. Se prefiere frente a innerHTML porque este último procesa etiquetas de código, previniendo posibles brechas o inyecciones maliciosas.
 textoSaludo.textContent = mensaje;
+if (body.classList.contains('tema-oscuro')) {
+        btnTema.textContent = "Modo Claro";
+    } else {
+        btnTema.textContent = "Modo Oscuro";
+    }

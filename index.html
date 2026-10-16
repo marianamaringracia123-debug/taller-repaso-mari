@@ -13,10 +13,9 @@
         <div class="logo">Mi<span>Portafolio</span></div>
         <nav>
             <a href="#inicio">Inicio</a>
-            <a href="#proyectos">Proyectos</a>
+            <a href="#servicios">Servicios</a>
             <a href="#contacto">Contacto</a>
         </nav>
-        <!-- Inyección del Botón de Tema -->
         <div class="controles-usuario">
             <button id="btn-toggle-tema" class="btn-tema">Modo Oscuro</button>
         </div>
@@ -26,63 +25,64 @@
     <section id="inicio">
         <div class="hero-content">
             <span class="badge-hero">Diseño y Desarrollo Web Profesional</span>
-            <!-- Inyección del Título y Contenedor de Saludo Dinámico -->
+            
             <h1>Bienvenido a mi Portafolio</h1>
-            <!-- Contenedor vacío donde JS inyectará el saludo según la hora -->
+            
             <p id="saludo-tiempo-real" class="texto-resaltado"></p>
+
             <div class="hero-buttons">
-                <a href="#proyectos" class="btn btn-primary">Ver Proyectos</a>
+                <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
                 <a href="#contacto" class="btn btn-secondary">Contáctame</a>
             </div>
         </div>
     </section>
 
-    <!-- Sección Proyectos -->
-    <section id="proyectos">
+    <!-- Sección Servicios -->
+    <section id="servicios">
         <div class="section-title">
-            <h2>Mis Proyectos</h2>
-            <p>Algunos de los trabajos más recientes que he desarrollado.</p>
+            <h2>Mis Servicios</h2>
+            <p>Soluciones profesionales adaptadas a tus necesidades digitales.</p>
         </div>
         <div class="grid-proyectos">
-            <!-- Proyecto 1 -->
-            <article>
+            <!-- Servicio 1 -->
+            <article class="card">
                 <div class="card-img">
-                    <img src="img/hero-bn.jpg" alt="Proyecto 1">
+                    <img src="img/servicio-1.jpg" alt="Servicio 1">
                 </div>
                 <div class="card-body">
-                    <span class="tech-tag">HTML / CSS / JS</span>
-                    <h3>Proyecto Uno</h3>
-                    <p>Descripción breve del proyecto y las tecnologías utilizadas para su desarrollo web.</p>
+                    <span class="tech-tag">Desarrollo Web</span>
+                    <h3>Servicio 1</h3>
+                    <p>Descripción detallada del primer servicio enfocado en la creación de sitios modernos y optimizados.</p>
                 </div>
             </article>
 
-            <!-- Proyecto 2 -->
-            <article>
+            <!-- Servicio 2 -->
+            <article class="card">
                 <div class="card-img">
-                    <img src="img/hero-bn.jpg" alt="Proyecto 2">
+                    <img src="img/servicio-2.jpg" alt="Servicio 2">
                 </div>
                 <div class="card-body">
-                    <span class="tech-tag">HTML / CSS</span>
-                    <h3>Proyecto Dos</h3>
-                    <p>Descripción breve del segundo proyecto implementando un diseño moderno y responsivo.</p>
+                    <span class="tech-tag">Diseño UI/UX</span>
+                    <h3>Servicio 2</h3>
+                    <p>Descripción detallada del segundo servicio enfocado en la experiencia de usuario y diseño visual.</p>
                 </div>
             </article>
 
-            <!-- Proyecto 3 -->
-            <article>
+            <!-- Servicio 3 -->
+            <article class="card">
                 <div class="card-img">
-                    <img src="img/hero-bn.jpg" alt="Proyecto 3">
+                    <img src="img/servicio-3.jpg" alt="Servicio 3">
                 </div>
                 <div class="card-body">
-                    <span class="tech-tag">JavaScript</span>
-                    <h3>Proyecto Tres</h3>
-                    <p>Aplicación interactiva desarrollada con lógica avanzada y manipulación del DOM.</p>
+                    <span class="tech-tag">Optimización SEO</span>
+                    <h3>Servicio 3</h3>
+                    <p>Descripción detallada del tercer servicio enfocado en posicionamiento y rendimiento en buscadores.</p>
                 </div>
             </article>
         </div>
     </section>
 
-    <!-- Sección Contacto -->
+    
     <section id="contacto">
         <div class="section-title">
             <h2>Contacto</h2>
@@ -90,12 +90,11 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <p>&copy; 2026 - Todos los derechos reservados.</p>
     </footer>
 
-    <!-- Conexión del Script al final antes del cierre del body -->
+   
     <script src="js/app.js" defer></script>
 </body>
 </html>
