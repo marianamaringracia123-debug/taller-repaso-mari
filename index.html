@@ -11,90 +11,89 @@
     <!-- Header con Navegación y Botón de Modo Oscuro -->
     <header>
         <div class="logo">Mi<span>Portafolio</span></div>
-        <nav>
+        <nav aria-label="Navegación principal">
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Servicios</a>
             <a href="#contacto">Contacto</a>
         </nav>
         <div class="controles-usuario">
-            <button id="btn-toggle-tema" class="btn-tema">Modo Oscuro</button>
+            <button id="btn-toggle-tema" class="btn-tema" aria-label="Cambiar a modo oscuro">Modo Oscuro</button>
         </div>
     </header>
 
-    <!-- Sección Inicio / Hero -->
-    <section id="inicio">
-        <div class="hero-content">
-            <span class="badge-hero">Diseño y Desarrollo Web Profesional</span>
-            
-            <h1>Bienvenido a mi Portafolio</h1>
-            
-            <p id="saludo-tiempo-real" class="texto-resaltado"></p>
-
-            <div class="hero-buttons">
-                <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
-                <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+    <!-- Contenido Principal -->
+    <main>
+        <!-- Sección Inicio / Hero -->
+        <section id="inicio" aria-labelledby="titulo-inicio">
+            <div class="hero-content">
+                <span class="badge-hero">Diseño y Desarrollo Web Profesional</span>
+                <h1 id="titulo-inicio">Bienvenido a mi Portafolio</h1>
+                <p id="saludo-tiempo-real" class="texto-resaltado"></p>
+                <div class="hero-buttons">
+                    <a href="#servicios" class="btn btn-primary">Ver Servicios</a>
+                    <a href="#contacto" class="btn btn-secondary">Contáctame</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Sección Servicios -->
-    <section id="servicios">
-        <div class="section-title">
-            <h2>Mis Servicios</h2>
-            <p>Soluciones profesionales adaptadas a tus necesidades digitales.</p>
-        </div>
-        <div class="grid-proyectos">
-            <!-- Servicio 1 -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="img/servicio-1.jpg" alt="Servicio 1">
-                </div>
-                <div class="card-body">
-                    <span class="tech-tag">Desarrollo Web</span>
-                    <h3>Servicio 1</h3>
-                    <p>Descripción detallada del primer servicio enfocado en la creación de sitios modernos y optimizados.</p>
-                </div>
-            </article>
+        <!-- Sección Servicios -->
+        <section id="servicios" aria-labelledby="titulo-servicios">
+            <div class="section-title">
+                <h2 id="titulo-servicios">Mis Servicios</h2>
+                <p>Soluciones profesionales adaptadas a tus necesidades digitales.</p>
+            </div>
+            <div class="grid-proyectos">
+                <!-- Servicio 1 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="img/servicio-1.jpg" alt="Pantalla mostrando código de desarrollo web en una laptop" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="tech-tag">Desarrollo Web</span>
+                        <h3>Servicio 1</h3>
+                        <p>Descripción detallada del primer servicio enfocado en la creación de sitios modernos y optimizados.</p>
+                    </div>
+                </article>
 
-            <!-- Servicio 2 -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="img/servicio-2.jpg" alt="Servicio 2">
-                </div>
-                <div class="card-body">
-                    <span class="tech-tag">Diseño UI/UX</span>
-                    <h3>Servicio 2</h3>
-                    <p>Descripción detallada del segundo servicio enfocado en la experiencia de usuario y diseño visual.</p>
-                </div>
-            </article>
+                <!-- Servicio 2 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="img/servicio-2.jpg" alt="Prototipo de interfaz móvil en una tablet" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="tech-tag">Diseño UI/UX</span>
+                        <h3>Servicio 2</h3>
+                        <p>Descripción detallada del segundo servicio enfocado en la experiencia de usuario y diseño visual.</p>
+                    </div>
+                </article>
 
-            <!-- Servicio 3 -->
-            <article class="card">
-                <div class="card-img">
-                    <img src="img/servicio-3.jpg" alt="Servicio 3">
-                </div>
-                <div class="card-body">
-                    <span class="tech-tag">Optimización SEO</span>
-                    <h3>Servicio 3</h3>
-                    <p>Descripción detallada del tercer servicio enfocado en posicionamiento y rendimiento en buscadores.</p>
-                </div>
-            </article>
-        </div>
-    </section>
+                <!-- Servicio 3 -->
+                <article class="card">
+                    <div class="card-img">
+                        <img src="img/servicio-3.jpg" alt="Gráficas analíticas de rendimiento SEO en un monitor" loading="lazy">
+                    </div>
+                    <div class="card-body">
+                        <span class="tech-tag">Optimización SEO</span>
+                        <h3>Servicio 3</h3>
+                        <p>Descripción detallada del tercer servicio enfocado en posicionamiento y rendimiento en buscadores.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
 
-    
-    <section id="contacto">
-        <div class="section-title">
-            <h2>Contacto</h2>
-            <p>¿Tienes algún proyecto en mente? Hablemos.</p>
-        </div>
-    </section>
+        <!-- Sección Contacto -->
+        <section id="contacto" aria-labelledby="titulo-contacto">
+            <div class="section-title">
+                <h2 id="titulo-contacto">Contacto</h2>
+                <p>¿Tienes algún proyecto en mente? Hablemos.</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>&copy; 2026 - Todos los derechos reservados.</p>
     </footer>
 
-   
     <script src="js/app.js" defer></script>
 </body>
 </html>

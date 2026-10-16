@@ -5,18 +5,35 @@
     box-sizing: border-box;
 }
 
-/* 1. Variables globales en :root (Paleta de colores moderna) */
+/* 1. Variables globales (Paleta de colores moderna y dinámica) */
 :root {
     --color-principal: #0f172a;    /* Azul muy oscuro/casi negro */
     --color-secundario: #2563eb;   /* Azul vibrante */
     --color-secundario-hover: #1d4ed8;
     --color-fondo: #f8fafc;        /* Fondo claro elegante */
-    --color-texto: #ffffff;        /* Texto blanco */
-    --color-texto-oscuro: #334155; /* Texto principal oscuro */
+    --color-texto-principal: #334155; /* Texto principal oscuro */
     --color-texto-mutado: #64748b; /* Texto secundario gris */
     --color-tarjeta: #ffffff;      /* Fondo de tarjetas */
+    --border-color: #e2e8f0;       /* Bordes claros */
+    --color-contacto: #ffffff;     /* Fondo sección contacto */
+    
+    /* Variables estáticas (no cambian en modo oscuro) */
+    --color-blanco-fijo: #ffffff;
     --sombra-tarjeta: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -4px rgba(0, 0, 0, 0.05);
     --sombra-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* =======================================================
+   RETO INTERACTIVO: VARIABLES PARA MODO OSCURO
+   ======================================================= */
+body.tema-oscuro {
+    --color-principal: #f8fafc;
+    --color-fondo: #0f172a;
+    --color-texto-principal: #e2e8f0;
+    --color-texto-mutado: #94a3b8;
+    --color-tarjeta: #1e293b;
+    --border-color: #334155;
+    --color-contacto: #1e293b;
 }
 
 html {
@@ -26,9 +43,9 @@ html {
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--color-fondo);
-    color: var(--color-texto-oscuro);
+    color: var(--color-texto-principal);
     line-height: 1.6;
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
 }
 
 /* 2. Flexbox en Header */
@@ -39,7 +56,7 @@ header {
     padding: 1.2rem 5%;
     background-color: rgba(15, 23, 42, 0.95);
     backdrop-filter: blur(8px);
-    color: var(--color-texto);
+    color: var(--color-blanco-fijo);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -71,7 +88,7 @@ header nav a {
 }
 
 header nav a:hover {
-    color: var(--color-texto);
+    color: var(--color-blanco-fijo);
 }
 
 /* Estilo Profesional para el Botón de Modo Oscuro */
@@ -81,7 +98,7 @@ header nav a:hover {
 
 .btn-tema {
     background-color: var(--color-secundario);
-    color: #ffffff;
+    color: var(--color-blanco-fijo);
     border: none;
     padding: 0.5rem 1.2rem;
     border-radius: 6px;
@@ -106,7 +123,7 @@ header nav a:hover {
     justify-content: center;
     align-items: center;
     text-align: center;
-    color: var(--color-texto);
+    color: var(--color-blanco-fijo);
     padding: 2rem 1rem;
 }
 
@@ -132,7 +149,7 @@ header nav a:hover {
     line-height: 1.2;
     margin-bottom: 1rem;
     letter-spacing: -1px;
-    color: var(--color-texto);
+    color: var(--color-blanco-fijo);
 }
 
 #inicio p {
@@ -163,7 +180,7 @@ header nav a:hover {
 
 .btn-primary {
     background-color: var(--color-secundario);
-    color: var(--color-texto);
+    color: var(--color-blanco-fijo);
 }
 
 .btn-primary:hover {
@@ -173,7 +190,7 @@ header nav a:hover {
 
 .btn-secondary {
     background-color: rgba(255, 255, 255, 0.1);
-    color: var(--color-texto);
+    color: var(--color-blanco-fijo);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
@@ -201,8 +218,8 @@ header nav a:hover {
     font-size: 1rem;
 }
 
-/* 4. Grid Responsivo para Tarjetas de Proyectos */
-#proyectos {
+/* 4. Grid Responsivo para Tarjetas de Servicios (Corregido de #proyectos a #servicios) */
+#servicios {
     padding: 5rem 5%;
     max-width: 1200px;
     margin: 0 auto;
@@ -210,7 +227,7 @@ header nav a:hover {
 
 .grid-proyectos {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2.5rem;
 }
 
@@ -219,8 +236,8 @@ header nav a:hover {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--sombra-tarjeta);
-    border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, color 0.4s ease;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.4s ease, border-color 0.4s ease;
     display: flex;
     flex-direction: column;
 }
@@ -277,8 +294,8 @@ header nav a:hover {
 /* Sección Contacto y Footer */
 #contacto {
     padding: 5rem 5%;
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
+    background-color: var(--color-contacto);
+    border-top: 1px solid var(--border-color);
     transition: background-color 0.4s ease, border-color 0.4s ease;
 }
 
@@ -289,50 +306,41 @@ header nav a:hover {
 footer {
     text-align: center;
     padding: 2rem 1rem;
-    background-color: var(--color-principal);
+    background-color: #0f172a;
     color: #94a3b8;
     font-size: 0.875rem;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* =======================================================
-   MODO OSCURO - CORRECCIÓN DE COLORES Y CONTRASTE
-   ======================================================= */
-body.tema-oscuro {
-    background-color: #0f172a;
-    color: #e2e8f0;
-}
+/* 5. Responsive / Media Queries para Dispositivos Móviles */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+        text-align: center;
+    }
 
-/* Adaptar títulos generales en modo oscuro */
-body.tema-oscuro h2, 
-body.tema-oscuro h3 {
-    color: #f8fafc;
-}
+    header nav a {
+        margin: 0 0.75rem;
+    }
 
-/* Adaptar párrafos de las secciones en modo oscuro */
-body.tema-oscuro p,
-body.tema-oscuro .section-title p {
-    color: #94a3b8;
-}
+    .controles-usuario {
+        margin-left: 0;
+        width: 100%;
+    }
 
-/* Fondo de la sección de contacto en modo oscuro */
-body.tema-oscuro #contacto {
-    background-color: #1e293b;
-    border-top: 1px solid #334155;
-}
+    .btn-tema {
+        width: 100%;
+    }
 
-/* Tarjetas y artículos de proyectos en modo oscuro con excelente contraste */
-body.tema-oscuro .card,
-body.tema-oscuro .grid-proyectos article {
-    background-color: #1e293b;
-    color: #e2e8f0;
-    border: 1px solid #334155;
-}
+    .hero-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
 
-body.tema-oscuro .grid-proyectos article h3 {
-    color: #ffffff;
-}
-
-body.tema-oscuro .grid-proyectos article p {
-    color: #cbd5e1;
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 }
